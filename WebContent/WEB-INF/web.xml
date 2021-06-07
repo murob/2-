@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>WagleWagle</display-name>
+
+  <context-param>
+  	<param-name>MariaJDBCDriver</param-name>
+  	<param-value>org.mariadb.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>MariaConnectURL</param-name>
+  	<param-value>jdbc:mariadb://127.0.0.1:3306/kosmo_db</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>MariaUser</param-name>
+  	<param-value>kosmo_user</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>MariaPass</param-name>
+  	<param-value>1234</param-value>
+  </context-param>
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+<filter>
+	<filter-name>SetCharEncoding</filter-name>
+	<filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+	<init-param>
+		<param-name>encoding</param-name>
+		<param-value>utf-8</param-value>
+	</init-param>	
+</filter>
+<filter-mapping>
+	<filter-name>SetCharEncoding</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>  
+
+<servlet>
+	<servlet-name>WagleBoardList</servlet-name>
+	<servlet-class>model2.wagleboard.ListController</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>WagleBoardList</servlet-name>
+	<url-pattern>/wagleboard/list.do</url-pattern>
+</servlet-mapping>
+
+</web-app>

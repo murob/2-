@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+footer {
+  margin-top: 100px;
+}
+
+.container {
+  border: 1px solid tomato;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  margin-top: 100px;
+}
+
+.input_font {
+  font-family: "Nanum Pen Script";
+  font-size: 40px;
+  float: left;
+  border: 1px solid;
+  width: 100px;
+}
+
+.main_input {
+  display: flex;
+}
+
+.input_search {
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  border-color: tomato;
+  margin-left: 20px;
+}
+
+.main_submit {
+  margin-right: 20px;
+  font-size: 5px;
+  width: 60px;
+}
+
+.ad_container {
+  height: 300px;
+  margin-top: 50px;
+  border: 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main_ad {
+  border: 1px solid;
+  width: 1200px;
+  height: 280px;
+}
+
+.main_board {
+  border: 1px solid;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  text-align: center;
+}
+
+.hot_board {
+  border: 1px solid;
+  display: inline-block;
+  width: 600px;
+}
+
+.sale_board {
+  border: 1px solid;
+  display: inline-block;
+  width: 600px;
+}
+
+.main_gulist {
+  border: 1px solid;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.gu_list {
+  border: 1px solid;
+  width: 1200px;
+  height: 300px;
+}
+
+.main_copyright {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

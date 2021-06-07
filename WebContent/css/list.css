@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+footer {
+  margin-top: 100px;
+}
+
+.main_nav {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+.container {
+  border: 1px solid tomato;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  margin-top: 100px;
+}
+
+.list_input {
+  display: flex;
+  position: relative;
+}
+
+.input_search {
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  border-color: tomato;
+  margin-left: 20px;
+}
+
+.list_submit {
+  margin-right: 20px;
+  font-size: 5px;
+  width: 60px;
+}
+
+.input_font {
+  font-family: "Nanum Pen Script";
+  font-size: 40px;
+  float: left;
+  border: 1px solid;
+  width: 100px;
+}
+
+.list_content {
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  height: 1200px;
+}
+
+.content_header {
+  height: 300px;
+  display: flex;
+  margin-top: 50px;
+}
+
+.list_line {
+  border: 0.1px solid gainsboro;
+  width: 1200px;
+  height: 0.5px;
+}
+
+.content_header a {
+  margin-left: 40px;
+  color: black;
+  font-size: 30px;
+}
+
+.main_copyright {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
