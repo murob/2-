@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-footer {
-  margin-top: 100px;
-}
-
 .main_nav {
   position: fixed;
   top: 0%;
@@ -66,9 +62,9 @@ footer {
   height: 0.5px;
 }
 
-.content_header a {
+.content_title_name {
   margin-left: 40px;
-  color: black;
+  color: gray;
   font-size: 30px;
 }
 
@@ -76,4 +72,8 @@ footer {
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+footer {
+  margin-top: 100px;
 }

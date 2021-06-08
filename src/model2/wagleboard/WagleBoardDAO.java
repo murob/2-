@@ -16,9 +16,14 @@ public class WagleBoardDAO extends ConnectionPool {
 		int totalCount = 0;
 		
 		String query = "SELECT COUNT(*) FROM wagleboard";
-		if(map.get("searchWord")!=null) {
-			query += " WHERE " + map.get("searchField") + " "
-					+ " LIKE '%"+ map.get("searchWord") + "%'";
+		if(map.get("searchWord")!=null) 
+		{
+			query += " WHERE "+ map.get("searchField") +" "
+					+" LIKE '%"+map.get("searchWord")+ "%' "
+					+" AND gu LIKE '%"+map.get("gu")+"%' ";
+		}
+		else {
+			query += " WHERE gu LIKE '%"+map.get("gu")+"%' ";
 		}
 		try {
 			stmt = con.createStatement();
@@ -37,16 +42,22 @@ public class WagleBoardDAO extends ConnectionPool {
 		List<WagleBoardDTO> bbs = new Vector<WagleBoardDTO>();
 		
 		String query ="select * from wagleboard ";
-		if(map.get("searchWord")!=null)
+		if(map.get("searchWord")!=null)//검색어가 있을경우
 		{
 			query += " WHERE "+ map.get("searchField") +" "
-					+" LIKE '%"+map.get("searchWord")+ "%' ";
+					+" LIKE '%"+map.get("searchWord")+ "%' "
+					+" AND gu LIKE '%"+map.get("gu")+"%' ";
 		}
-		query += " ORDER BY idx DESC LIMIT ?,?";
+		else{//검색어가 없을 경우
+			query += " WHERE gu LIKE '%"+map.get("gu")+"%' ";
+		}
+		query += " ORDER BY idx DESC LIMIT ?,?";			
 		System.out.println(query);
 		
 		try {
 			psmt = con.prepareStatement(query);
+			System.out.println(map.get("start"));
+			System.out.println(map.get("end"));
 			psmt.setInt(1, Integer.parseInt(map.get("start").toString()));
 			psmt.setInt(2, Integer.parseInt(map.get("end").toString()));
 			rs = psmt.executeQuery();
@@ -63,6 +74,7 @@ public class WagleBoardDAO extends ConnectionPool {
 				dto.setSfile(rs.getString(9));
 				dto.setPass(rs.getString(10));
 				dto.setVisitcount(rs.getInt(11));
+				dto.setGu(rs.getString(12));
 				
 				bbs.add(dto);
 			}
@@ -72,6 +84,10 @@ public class WagleBoardDAO extends ConnectionPool {
 			e.printStackTrace();
 		}
 		return bbs;
+	}
+	
+	public boolean isMember(String id, String pass) {
+		String sql = "SELECT COUNT(*) FROM "
 	}
 	
 }

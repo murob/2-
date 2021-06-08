@@ -41,13 +41,4 @@
 	<url-pattern>/*</url-pattern>
 </filter-mapping>  
 
-<servlet>
-	<servlet-name>WagleBoardList</servlet-name>
-	<servlet-class>model2.wagleboard.ListController</servlet-class>
-</servlet>
-<servlet-mapping>
-	<servlet-name>WagleBoardList</servlet-name>
-	<url-pattern>/wagleboard/list.do</url-pattern>
-</servlet-mapping>
-
 </web-app>

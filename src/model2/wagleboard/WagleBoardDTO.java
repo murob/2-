@@ -11,6 +11,14 @@ public class WagleBoardDTO {
 	private String ofile;
 	private String sfile;
 	private String pass;
+	private String gu;
+	
+	public String getGu() {
+		return gu;
+	}
+	public void setGu(String gu) {
+		this.gu = gu;
+	}
 	private int visitcount;
 	
 	public String getIdx() {
