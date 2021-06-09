@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="navbar.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,23 +10,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>GuList</title>
 <link type="text/css" rel="stylesheet" href="../css/list.css" />
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-<link rel="preconnect" href="https://fonts.gstatic.com" />
-<link
-	href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap"
-	rel="stylesheet" />
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
 	<form method="get">
@@ -191,19 +175,5 @@
 	</form>
 
 </body>
-<footer>
-	<div
-		class="
-        row
-        border border-dark border-bottom-0 border-right-0 border-left-0
-      "></div>
-	<div class="main_copyright">
-		<div class="copyright">
-			<h3 style="font-family: Nanum Pen Script; font-size: 50px">와글와글</h3>
-			대표이사 : 성승현&nbsp;&nbsp;Email : seong7517@gmail.com&nbsp;&nbsp; Mobile
-			: 010-4081-7517&nbsp;&nbsp; Address : 서울시 금천구 금하로 <br /> copyright
-			&copy; 승현소프트웨어 All right reserved.
-		</div>
-	</div>
-</footer>
+<%@ include file="footer.jsp" %>
 </html>

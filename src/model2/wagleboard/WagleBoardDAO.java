@@ -86,8 +86,8 @@ public class WagleBoardDAO extends ConnectionPool {
 		return bbs;
 	}
 	
-	public boolean isMember(String id, String pass) {
-		String sql = "SELECT COUNT(*) FROM "
-	}
+//	public boolean isMember(String id, String pass) {
+//		String sql = "SELECT COUNT(*) FROM "
+//	}
 	
 }

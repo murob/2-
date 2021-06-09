@@ -10,9 +10,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import common.BoardConfig;
 import utils.BoardPage;
+import utils.JSFunction;
 
 @WebServlet("/wagleboard/list.do")
 public class ListController extends HttpServlet {
@@ -65,6 +67,8 @@ public class ListController extends HttpServlet {
 
 		// View에 출력할 페이지 번호를 문자열로 저장
 		String pagingImg = BoardPage.pagingImg(totalCount, pageSize, blockPage, pageNum, "../wagleboard/list.do");
+//		String id = req.getParameter("user_id");
+//		map.put("user_id", id);
 		map.put("pagingImg", pagingImg);// 페이지 번호 문자열
 		map.put("totalCount", totalCount);// 게시물의 갯수
 		map.put("pageSize", pageSize);// 페이지 수

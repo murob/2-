@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.container{
+	border: 1px solid black;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 600px;
+}
+
+.inner_container{
+	border: 1px solid black;
+	width: 500px;
+	height: 500px;
+	padding-top: 100px;
+}
+
+.login_regist{
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+}
+
+.login_regist > a{
+	color: gray;
+}
