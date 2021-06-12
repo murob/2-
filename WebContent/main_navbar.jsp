@@ -27,7 +27,7 @@
 <body>
 	<nav class="navbar bg-dark navbar-dark main_nav"
 		style="position: fixed; top: 0%; left: 0%; right: 0%">
-		<a class="navbar-brand" href="./main.jsp"
+		<a class="navbar-brand" href="#"
 			style="font-family: Nanum Pen Script; font-size: 40px">와글와글</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#collapsibleNavbar">

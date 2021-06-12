@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="navbar.jsp"%>
+<%@ include file="main_navbar.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -120,11 +120,11 @@ footer {
 
 			<div class="main_login">
 				<c:choose>
-					<c:when test="${param.user_id eq null}">
+					<c:when test="${user_id eq null}">
 						<a href="./wagleMember/login.do" style="color: black">로그인/회원가입</a>					
 					</c:when>
 					<c:otherwise>
-						<a href="../wagleMember/logout.do" style="color: black">로그아웃</a>
+						<a href="./wagleMember/logout.do" style="color: black">로그아웃</a>
 					</c:otherwise>
 				</c:choose>
 			</div>

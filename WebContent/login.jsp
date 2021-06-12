@@ -12,8 +12,8 @@
 </head>
 <body>
 	<%
-if(session.getAttribute("USER_ID")==null){
-%>
+	if (session.getAttribute("USER_ID") == null) {
+	%>
 	<script>
 		function loginValidate(fn) {
 			if(!fn.user_id.value)
@@ -29,7 +29,7 @@ if(session.getAttribute("USER_ID")==null){
 			}
 		}
 	</script>
-	<form action="./wagleMember/login.do" method="get" name="loginFrm"
+	<form action="./wagleMember/login.do" method="post" name="loginFrm"
 		onsubmit="return loginValidate(this);">
 		<div class="container">
 			<div class="inner_container">

@@ -1,6 +1,8 @@
 package model2.wagleboard;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,27 +12,33 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import common.BoardConfig;
 import utils.BoardPage;
-import utils.JSFunction;
 
 @WebServlet("/wagleboard/list.do")
 public class ListController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		// DAO객체 생성(커넥션 풀 사용함)
+		
 		WagleBoardDAO dao = new WagleBoardDAO();
-
+		WagleBoardDTO dto = new WagleBoardDTO();
 		// 검색 파라미터 및 View로 전달할 여러가지 데이터 저장용 Map컬렉션 생성
 		Map<String, Object> map = new HashMap<String, Object>();
 //		req.getParameter("gu");
 		// 검색 파라미터 처리
+		
+		
+		
 		String searchField = req.getParameter("searchField");// 검색할 필드명
 		String searchWord = req.getParameter("searchWord");// 검색어
 		String gu = req.getParameter("gu");
+		
+		System.out.println("listcontroller gu값:"+gu);
+		System.out.println("dto에 저장된 gu값: "+dto.getGu());
 		if (searchWord != null) {
 			if (gu != null) {
 				map.put("searchField", searchField);// title or content
@@ -59,6 +67,9 @@ public class ListController extends HttpServlet {
 		int end = pageSize;//5
 		map.put("start", start);
 		map.put("end", end);
+		map.put("gu", gu);
+		System.out.println("페이지 gu값 디버깅:"+map.get("gu"));
+		System.out.println("그냥 gu는 들어가나:"+gu);
 		/*** 페이지처리 end ***/
 
 		// 실제 출력할 레코드를 가져옴
@@ -66,7 +77,7 @@ public class ListController extends HttpServlet {
 		dao.close();
 
 		// View에 출력할 페이지 번호를 문자열로 저장
-		String pagingImg = BoardPage.pagingImg(totalCount, pageSize, blockPage, pageNum, "../wagleboard/list.do");
+		String pagingImg = BoardPage.pagingImg(totalCount, pageSize, blockPage, pageNum, "../wagleboard/list.do?gu="+gu);
 //		String id = req.getParameter("user_id");
 //		map.put("user_id", id);
 		map.put("pagingImg", pagingImg);// 페이지 번호 문자열
@@ -76,6 +87,7 @@ public class ListController extends HttpServlet {
 
 		req.setAttribute("boardLists", boardLists);// 페이지에 출력할 게시물
 		req.setAttribute("map", map);// 각종 파라미터 및 페이지관련 값
+		req.setAttribute("gu", gu);
 		req.getRequestDispatcher("../GuList.jsp").forward(req, resp);
 	}
 

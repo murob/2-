@@ -72,9 +72,8 @@ public class WagleBoardDAO extends ConnectionPool {
 				dto.setHatebtn(rs.getInt(7));
 				dto.setOfile(rs.getString(8));
 				dto.setSfile(rs.getString(9));
-				dto.setPass(rs.getString(10));
-				dto.setVisitcount(rs.getInt(11));
-				dto.setGu(rs.getString(12));
+				dto.setVisitcount(rs.getInt(10));
+				dto.setGu(rs.getString(11));
 				
 				bbs.add(dto);
 			}
@@ -86,8 +85,72 @@ public class WagleBoardDAO extends ConnectionPool {
 		return bbs;
 	}
 	
-//	public boolean isMember(String id, String pass) {
-//		String sql = "SELECT COUNT(*) FROM "
-//	}
+	public int insertWrite(WagleBoardDTO dto) {
+		int result = 0;
+		try {
+			String query = "INSERT INTO wagleboard ("
+					+ " title, id, content, ofile, sfile, gu) "
+					+ " VALUES ( "
+					+ " ?, ?, ?, ?, ?, ?)";
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getId());
+			psmt.setString(3, dto.getContent());
+			psmt.setString(4, dto.getOfile());
+			psmt.setString(5, dto.getSfile());
+			psmt.setString(6, dto.getGu());
+			
+			result = psmt.executeUpdate();
+		} 
+		catch (Exception e) {
+			System.out.println("게시물 입력중 예외발생");
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	public WagleBoardDTO selectView(String idx) {
+		WagleBoardDTO dto = new WagleBoardDTO();
+		
+		String query = "SELECT * FROM wagleboard WHERE idx=?";
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, idx);
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				dto.setIdx(rs.getString(1));
+				dto.setTitle(rs.getString(2));
+				dto.setId(rs.getString(3));
+				dto.setPostdate(rs.getDate(4));
+				dto.setContent(rs.getString(5));
+				dto.setLikebtn(rs.getInt(6));
+				dto.setHatebtn(rs.getInt(7));
+				dto.setOfile(rs.getString(8));
+				dto.setSfile(rs.getString(9));
+				dto.setGu(rs.getString(10));
+			}
+		} 
+		catch (Exception e) {
+			System.out.println("게시물 상세보기중 예외발생");
+			e.printStackTrace();
+		}
+		return dto;
+	}
+	
+	public void updateVisitCount(String idx) {
+		String query = "UPDATE wagleboard SET "
+				+ " visitcount=visitcount+1 "
+				+ " WHERE idx=?";
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, idx);
+			psmt.executeQuery();
+		} 
+		catch (Exception e) {
+			System.out.println("게시물 조회수 증가중 예외발생");
+			e.printStackTrace();
+		}
+	}
 	
 }

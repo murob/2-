@@ -19,6 +19,7 @@ public class LogoutController extends HttpServlet {
 		HttpSession session = req.getSession();
 		session.invalidate();
 //		req.getRequestDispatcher("../main.jsp").forward(req, resp);
+//		resp.sendRedirect("../main.jsp");
 		JSFunction.alertLocation(resp, "로그아웃 되었습니다.", "../main.jsp");
 		System.out.println("세션종료(로그아웃)!");
 	}

@@ -80,9 +80,9 @@ public class BoardPage {
 		int totalPage = (int)(Math.ceil(((double)totalCount/pageSize)));
 		int pageTemp = (((pageNum-1) / blockPage) * blockPage) + 1;
 		if(pageTemp != 1) {
-			pagingStr += "<a href='"+reqUrl+"?pageNum=1'><img src='../images/paging1.gif'></a>";
+			pagingStr += "<a href='"+reqUrl+"&pageNum=1'><img src='../images/paging1.gif'></a>";
 			pagingStr += "&nbsp;";
-			pagingStr += "<a href='"+reqUrl+"?pageNum="+(pageTemp-1)+"'>"+ "<img src='../images/paging2.gif'></a>";
+			pagingStr += "<a href='"+reqUrl+"&pageNum="+(pageTemp-1)+"'>"+ "<img src='../images/paging2.gif'></a>";
 		}
 		int blockCount = 1;
 		while(blockCount<=blockPage && pageTemp<=totalPage) {
@@ -90,15 +90,15 @@ public class BoardPage {
 				pagingStr += "&nbsp;"+pageTemp+"&nbsp;";
 			}
 			else {
-				pagingStr += "&nbsp;<a href='"+reqUrl+"?pageNum="+pageTemp+"'>"+pageTemp+"</a>&nbsp;";
+				pagingStr += "&nbsp;<a href='"+reqUrl+"&pageNum="+pageTemp+"'>"+pageTemp+"</a>&nbsp;";
 			}
 			pageTemp++;
 			blockCount++;
 		}
 		if(pageTemp <= totalPage) {
-			pagingStr += "<a href='"+reqUrl+"?pageNum="+pageTemp+"'>"+"<img src='../images/paging3.gif'></a>";
+			pagingStr += "<a href='"+reqUrl+"&pageNum="+pageTemp+"'>"+"<img src='../images/paging3.gif'></a>";
 			pagingStr += "&nbsp;";
-			pagingStr += "<a href='"+reqUrl+"?pageNum="+totalPage+"'>"+"<img src='../images/paging4.gif'></a>";
+			pagingStr += "<a href='"+reqUrl+"&pageNum="+totalPage+"'>"+"<img src='../images/paging4.gif'></a>";
 		}
 		return pagingStr;
 	}	

@@ -39,10 +39,10 @@ public class WagleMemberDAO extends ConnectionPool {
 		int result = 0;
 		try {
 			String query = "INSERT INTO wagle_member ( "
-					+ " id, password, name, gender, birthday, zipcode, address1, address2, email, phone, "
-					+ " tellnum, registdate, gu) "
+					+ " id, pass, name, gender, birthday, zipcode, address1, address2, email, phone, "
+					+ " tellnum, regidate, gu) "
 					+ " VALUES ( "
-					+ " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?) ";
+					+ " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now(), ?) ";
 			
 			psmt = con.prepareStatement(query);
 			psmt.setString(1, dto.getId());
@@ -64,7 +64,48 @@ public class WagleMemberDAO extends ConnectionPool {
 			System.out.println("회원등록중 예외발생");
 			e.printStackTrace();
 		}
+		System.out.println(result);
 		return result;
+	}
+	
+	public int joongbok(String id) {
+		String query = "SELECT COUNT(*) FROM wagle_member WHERE id=?";
+		int totalCount = 0;
+		
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			rs.next();
+			totalCount=rs.getInt(1);
+		} 
+		catch (Exception e) {
+			System.out.println("아이디 중복확인 중 예외발생");
+			e.printStackTrace();
+		}
+		return totalCount;
+	}
+	
+	public String memberGu(String id) {
+		String query = "SELECT gu FROM wagle_member WHERE id=?";
+		String gu = "";
+		
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			rs.next();
+			gu = rs.getString(1);
+		} 
+		catch (Exception e) {
+			System.out.println("아이디의 소속 구 조회중 예외발생");
+			System.out.println("아이디 값은 뭐임?" + id);
+			System.out.println("gu값 들어감?"+gu);
+			e.printStackTrace();
+		}
+		System.out.println(gu);
+		return gu;
+		
 	}
 	
 }

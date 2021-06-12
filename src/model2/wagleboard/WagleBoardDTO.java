@@ -10,7 +10,6 @@ public class WagleBoardDTO {
 	private int hatebtn;
 	private String ofile;
 	private String sfile;
-	private String pass;
 	private String gu;
 	
 	public String getGu() {
@@ -74,12 +73,6 @@ public class WagleBoardDTO {
 	}
 	public void setSfile(String sfile) {
 		this.sfile = sfile;
-	}
-	public String getPass() {
-		return pass;
-	}
-	public void setPass(String pass) {
-		this.pass = pass;
 	}
 	public int getVisitcount() {
 		return visitcount;

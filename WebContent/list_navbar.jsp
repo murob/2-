@@ -27,7 +27,7 @@
 <body>
 	<nav class="navbar bg-dark navbar-dark main_nav"
 		style="position: fixed; top: 0%; left: 0%; right: 0%">
-		<a class="navbar-brand" href="./main.jsp"
+		<a class="navbar-brand" href="../main.jsp"
 			style="font-family: Nanum Pen Script; font-size: 40px">와글와글</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#collapsibleNavbar">
@@ -39,41 +39,41 @@
 					class="nav-link dropdown-toggle" href="#" id="navbardrop"
 					data-toggle="dropdown"> 동네게시판 </a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="./wagleboard/list.do?gu=강남">강남구
-							게시판</a> <a class="dropdown-item" href="./wagleboard/list.do?gu=강동">강동구
-							게시판</a> <a class="dropdown-item" href="./wagleboard/list.do?gu=강북">강북구
+						<a class="dropdown-item" href="./list.do?gu=강남">강남구
+							게시판</a> <a class="dropdown-item" href="./list.do?gu=강동">강동구
+							게시판</a> <a class="dropdown-item" href="./list.do?gu=강북">강북구
 							게시판</a> <a class="dropdown-item"
-							href="./wagleboard/list.do?gu=강서">강서구 게시판</a> <a
-							class="dropdown-item" href="./wagleboard/list.do?gu=관악">관악구
+							href="./list.do?gu=강서">강서구 게시판</a> <a
+							class="dropdown-item" href="./list.do?gu=관악">관악구
 							게시판</a> <a class="dropdown-item"
-							href="./wagleboard/list.do?gu=광진">광진구 게시판</a> <a
-							class="dropdown-item" href="./wagleboard/list.do?gu=구로">구로구
+							href="./list.do?gu=광진">광진구 게시판</a> <a
+							class="dropdown-item" href="./list.do?gu=구로">구로구
 							게시판</a> <a class="dropdown-item"
-							href="./wagleboard/list.do?gu=금천">금천구 게시판</a> <a
-							class="dropdown-item" href="./wagleboard/list.do?gu=노원">노원구
+							href="./list.do?gu=금천">금천구 게시판</a> <a
+							class="dropdown-item" href="./list.do?gu=노원">노원구
 							게시판</a> <a class="dropdown-item"
-							href="./wagleboard/list.do?gu=도봉">도봉구게시판</a> <a
-							class="dropdown-item" href="./wagleboard/list.do?gu=동대문">동대문구
+							href="./list.do?gu=도봉">도봉구게시판</a> <a
+							class="dropdown-item" href="./list.do?gu=동대문">동대문구
 							게시판</a> <a class="dropdown-item"
-							href="./wagleboard/list.do?gu=동작">동작구 게시판</a> <a
-							class="dropdown-item" href="./wagleboard/list.do?gu=마포">마포구
+							href="./list.do?gu=동작">동작구 게시판</a> <a
+							class="dropdown-item" href="./list.do?gu=마포">마포구
 							게시판</a> <a class="dropdown-item"
-							href="./wagleboard/list.do?gu=서대문">서대문구 게시판</a> <a
-							class="dropdown-item" href="./wagleboard/list.do?gu=서초">서초구
+							href="./list.do?gu=서대문">서대문구 게시판</a> <a
+							class="dropdown-item" href="./list.do?gu=서초">서초구
 							게시판</a> <a class="dropdown-item"
-							href="./wagleboard/list.do?gu=성동">성동구 게시판</a> <a
-							class="dropdown-item" href="./wagleboard/list.do?gu=성북">성북구
+							href="./list.do?gu=성동">성동구 게시판</a> <a
+							class="dropdown-item" href="./list.do?gu=성북">성북구
 							게시판</a> <a class="dropdown-item"
-							href="./wagleboard/list.do?gu=송파">송파구 게시판</a> <a
-							class="dropdown-item" href="./wagleboard/list.do?gu=양천">양천구
+							href="./list.do?gu=송파">송파구 게시판</a> <a
+							class="dropdown-item" href="./list.do?gu=양천">양천구
 							게시판</a> <a class="dropdown-item"
-							href="./wagleboard/list.do?gu=영등포">영등포구 게시판</a> <a
-							class="dropdown-item" href="./wagleboard/list.do?gu=용산">용산구
+							href="./list.do?gu=영등포">영등포구 게시판</a> <a
+							class="dropdown-item" href="./list.do?gu=용산">용산구
 							게시판</a> <a class="dropdown-item"
-							href="./wagleboard/list.do?gu=은평">은평구 게시판</a> <a
-							class="dropdown-item" href="./wagleboard/list.do?gu=종로">종로구
-							게시판</a> <a class="dropdown-item" href="./wagleboard/list.do?gu=중">중구
-							게시판</a> <a class="dropdown-item" href="./wagleboard/list.do?gu=중랑">중랑구
+							href="./list.do?gu=은평">은평구 게시판</a> <a
+							class="dropdown-item" href="./list.do?gu=종로">종로구
+							게시판</a> <a class="dropdown-item" href="./list.do?gu=중">중구
+							게시판</a> <a class="dropdown-item" href="./list.do?gu=중랑">중랑구
 							게시판</a>
 					</div></li>
 

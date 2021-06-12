@@ -41,4 +41,10 @@
 	<url-pattern>/*</url-pattern>
 </filter-mapping>  
 
+<context-param>
+	<param-name>maxPostSize</param-name>
+	<param-value>1024000</param-value>
+</context-param>
+
+
 </web-app>
