@@ -1,97 +1,150 @@
 @charset "UTF-8";
 
 footer {
-  margin-top: 100px;
+	margin-top: 100px;
+}
+.body{
+/* 	overflow-x: hidden; */
+}
+.main_box{
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
-.container {
-  border: 1px solid tomato;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 1200px;
-  margin-top: 100px;
+.main_container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 1050px;
+	height: 200px;
+	margin-top: 80px;
 }
 
 .input_font {
-  font-family: "Nanum Pen Script";
-  font-size: 40px;
-  float: left;
-  border: 1px solid;
-  width: 100px;
+	font-family: "Nanum Pen Script";
+	font-size: 50px;
+	float: left;
+	width: 150px;
+	display: flex;
+	justify-content: center;
 }
 
 .main_input {
-  display: flex;
+	display: flex;
 }
 
+
 .input_search {
-  width: 400px;
-  height: 40px;
-  border-radius: 5px;
-  border-color: tomato;
-  margin-left: 20px;
+	width: 450px;
+	height: 60px;
+	border-radius: 5px;
+	border-color: tomato;
+	margin-left: 20px;
 }
 
 .main_submit {
-  margin-right: 20px;
-  font-size: 5px;
-  width: 60px;
+	font-size: 15px;
+	width: 65px; 
+}
+
+.main_login{
+	margin-right: 50px;
 }
 
 .ad_container {
-  height: 300px;
-  margin-top: 50px;
-  border: 2px solid;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+	height: 300px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
 .main_ad {
-  border: 1px solid;
-  width: 1200px;
-  height: 280px;
+	width: 1050px;
+	height: 300px;
 }
 
+.main_ad li{
+	padding-top: 110px;
+}
+
+.main_ad span{
+	font-size: 50px;
+} 
+
 .main_board {
-  border: 1px solid;
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  height: 500px;
-  text-align: center;
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	height: 500px;
+/* 	text-align: center; */
 }
 
 .hot_board {
-  border: 1px solid;
-  display: inline-block;
-  width: 600px;
+	display: inline-block;
+	width: 525px;
+	padding: 10px;
+}
+
+.hot_board a{
+	color: black;
+}
+
+.hot_board li{
+	margin-bottom: 30px;
 }
 
 .sale_board {
-  border: 1px solid;
-  display: inline-block;
-  width: 600px;
+	border-left: 1px solid #E4E5E7;
+	display: inline-block;
+	width: 525px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .main_gulist {
-  border: 1px solid;
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
 }
 
 .gu_list {
-  border: 1px solid;
-  width: 1200px;
-  height: 300px;
+	border: 1px dotted;
+	width: 1050px;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .main_copyright {
-  display: flex;
-  justify-content: center;
-  text-align: center;
+	display: flex;
+	justify-content: center;
+	text-align: center;
 }
+
+/* 광고배너 슬라이드 효과 */
+  *{margin:0;padding:0;}
+  ul,li{list-style:none;}
+  .slide{height:300px;overflow:hidden;}
+  .slide ul{width:calc(100% * 4);display:flex;animation:slide 20s infinite;} /* slide를 8초동안 진행하며 무한반복 함 */
+  .slide li{width:calc(100% / 4);height:300px;}
+  .slide li:nth-child(1){background:#ffa;}
+  .slide li:nth-child(2){background:#faa;}
+  .slide li:nth-child(3){background:#afa;}
+  .slide li:nth-child(4){background:#aaf;}
+  @keyframes slide {
+    0% {margin-left:0;} /* 0 ~ 10  : 정지 */
+    10% {margin-left:0;} /* 10 ~ 25 : 변이 */
+    25% {margin-left:-100%;} /* 25 ~ 35 : 정지 */
+    35% {margin-left:-100%;} /* 35 ~ 50 : 변이 */
+    50% {margin-left:-200%;}
+    60% {margin-left:-200%;}
+    75% {margin-left:-300%;}
+    85% {margin-left:-300%;}
+    100% {margin-left:0;}
+  }

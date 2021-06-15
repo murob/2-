@@ -7,135 +7,120 @@
 <head>
 <meta charset="UTF-8" />
 <title>Insert title here</title>
-<!-- <link type="text/css" rel="stylesheet" href="../css/main.css" /> -->
-<style>
-footer {
-	margin-top: 100px;
-}
-
-.container {
-	border: 1px solid tomato;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 1200px;
-	margin-top: 100px;
-}
-
-.input_font {
-	font-family: "Nanum Pen Script";
-	font-size: 40px;
-	float: left;
-	border: 1px solid;
-	width: 100px;
-}
-
-.main_input {
-	display: flex;
-}
-
-.input_search {
-	width: 400px;
-	height: 40px;
-	border-radius: 5px;
-	border-color: tomato;
-	margin-left: 20px;
-}
-
-.main_submit {
-	margin-right: 20px;
-	font-size: 5px;
-	width: 60px;
-}
-
-.ad_container {
-	height: 300px;
-	margin-top: 50px;
-	border: 2px solid;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-
-.main_ad {
-	border: 1px solid;
-	width: 1200px;
-	height: 280px;
-}
-
-.main_board {
-	border: 1px solid;
-	margin-top: 50px;
-	display: flex;
-	justify-content: center;
-	height: 500px;
-	text-align: center;
-}
-
-.hot_board {
-	border: 1px solid;
-	display: inline-block;
-	width: 600px;
-}
-
-.sale_board {
-	border: 1px solid;
-	display: inline-block;
-	width: 600px;
-}
-
-.main_gulist {
-	border: 1px solid;
-	margin-top: 50px;
-	display: flex;
-	justify-content: center;
-	text-align: center;
-}
-
-.gu_list {
-	border: 1px solid;
-	width: 1200px;
-	height: 300px;
-}
-
-.main_copyright {
-	display: flex;
-	justify-content: center;
-	text-align: center;
-}
-</style>
+<script src="../common/jquery/jquery-3.6.0.js"></script>
+<link rel="stylesheet" href="./css/main.css" />
+<script>
+	$(function() {
+		$("#search").click(function() {
+			var f = document.getElementById("sForm");
+			if (f.gu.value == "") {
+				alert("동네를 입력해주세요");
+				f.search_dongnae.focus();
+				return false;
+			}
+			if (f.gu.value != "") {
+				var gu = f.search_dongnae.value
+				return gu;
+			}
+		});
+	});
+</script>
 </head>
 <body>
-	<form method="get">
-		<div class="container">
-			<div>
-				<span class="input_font"> 와글와글 </span>
-			</div>
-
-			<div class="main_input">
-				<input type="text" class="input_search" placeholder="동네 검색" />
-				<button type="submit" class="btn btn-danger main_submit">검색</button>
-			</div>
-
-			<div class="main_login">
-				<c:choose>
-					<c:when test="${user_id eq null}">
-						<a href="./wagleMember/login.do" style="color: black">로그인/회원가입</a>					
-					</c:when>
-					<c:otherwise>
-						<a href="./wagleMember/logout.do" style="color: black">로그아웃</a>
-					</c:otherwise>
-				</c:choose>
+	<form method="get" id="sForm" action="./wagleboard/list.do?gu=">
+		<div class="main_box">		
+			<div class="main_container">
+				<div>
+					<span class="input_font"> 와글와글 </span>
+				</div>
+	
+				<div class="main_input">
+					<input type="text" name="gu" class="input_search"
+						placeholder="동네 검색" />
+					<button type="submit" id="search" class="btn btn-danger main_submit">검색</button>
+				</div>
+	
+				<div class="main_login">
+					<c:choose>
+						<c:when test="${user_id eq null}">
+							<a href="./wagleMember/login.do" style="color: black">로그인/회원가입</a>
+						</c:when>
+						<c:otherwise>
+							<a href="./wagleMember/logout.do" style="color: black">로그아웃</a>
+						</c:otherwise>
+					</c:choose>
+				</div>
 			</div>
 		</div>
-
+ 
 		<div class="ad_container">
-			<div class="main_ad">광고배너</div>
+			<!-- 		<div class="slide"> -->
+			<div class="main_ad slide">
+				<ul>
+					<li><span>안녕하세요</span></li>
+					<li><span>광고주님들</span></li>
+					<li><span>연락주세요</span></li>
+					<li><span>사랑합니다</span></li>
+				</ul>
+			</div>
 		</div>
-
+		
+ 		 
+		<hr width="1050px" color="#E4E5E7" noshade style="margin-left: 430px; margin-top: 30px;"/>
 		<div class="main_board">
-			<div class="hot_board">여기는 게시물</div>
+			<div class="hot_board">
+				<div style="height: 55px; display: flex; justify-content: center;">
+					<div>
+						<ul class="pagination pagination-md" style="">
+							<li class="page-item"><a class="page-link" href="#">◁</a></li>
+							<li class="page-item"><a class="page-link" href="#">강남</a></li>
+							<li class="page-item"><a class="page-link" href="#">강동</a></li>
+							<li class="page-item"><a class="page-link" href="#">강북</a></li>
+							<li class="page-item"><a class="page-link" href="#">강서</a></li>
+							<li class="page-item"><a class="page-link" href="#">관악</a></li>
+							<li class="page-item"><a class="page-link" href="#">광진</a></li>
+							<li class="page-item"><a class="page-link" href="#">서초</a></li>
+							<li class="page-item"><a class="page-link" href="#">▷</a></li>
+						</ul>
+					</div>
+				</div>
+				<div> 
+					<ul>
+						<li>
+							<a href=""> 
+								<strong>강남구 제목임</strong><br />
+								<span>
+									내용내용내용내용내용내용내용내용내용내용내용내용내용<br />
+									내용내용내용내용내용내용내용내용내용내용내용내용내용<br />
+									내용내용내용내용내용내용내용내용내용내용내용내용...
+								</span><br />
+								<span style="font-size: 13px;">강남구 게시판</span> 
+								<span style="font-size: 13px; color: gray;">2021-06-14</span>
+							</a><br /><br />
+							<a href=""> 
+								<strong>관악구 제목임</strong><br />
+								<span>
+									내용내용내용내용내용내용내용내용내용내용내용내용내용<br />
+									내용내용내용내용내용내용내용내용내용내용내용내용내용<br />
+									내용내용내용내용내용내용내용내용내용내용내용내용...
+								</span><br />
+								<span style="font-size: 13px;">관악구 게시판</span> 
+								<span style="font-size: 13px; color: gray;">2021-06-14</span>
+							</a><br /><br />
+							<a href=""> 
+								<strong>금천구 제목임</strong><br />
+								<span>
+									내용내용내용내용내용내용내용내용내용내용내용내용내용<br />
+									내용내용내용내용내용내용내용내용내용내용내용내용내용<br />
+									내용내용내용내용내용내용내용내용내용내용내용내용...
+								</span><br />
+								<span style="font-size: 13px;">금천구 게시판</span> 
+								<span style="font-size: 13px; color: gray;">2021-06-14</span>
+							</a><br /><br />							
+						</li>
+					</ul>
+				</div>
+			</div>
 			<div class="sale_board">여기는 중고장터</div>
 		</div>
 

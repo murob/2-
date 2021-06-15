@@ -11,18 +11,35 @@
 <title>GuList</title>
 <link type="text/css" rel="stylesheet" href="../css/main.css" />
 <link type="text/css" rel="stylesheet" href="../css/list.css" />
+<script src="../common/jquery/jquery-3.6.0.js"></script>
+<script>
+	$(function() {
+		$("#search").click(function() {
+		var f = document.getElementById("sForm");
+		if(f.gu.value ==""){
+			alert("동네를 입력해주세요");
+			f.search_dongnae.focus();
+			return false;
+		}
+		if(f.gu.value != ""){
+			var gu = f.search_dongnae.value
+			return gu;
+		}
+		});
+	});
+</script>
 </head>
 <body>
 
-	<form method="get">
+	<form method="get" id="sForm" action="./list.do?gu=">
 		<div class="container">
 			<div>
 				<span class="input_font"> 와글와글 </span>
 			</div>
 
 			<div class="list_input">
-				<input type="text" class="input_search" />
-				<button type="submit" class="btn btn-danger list_submit">검색</button>
+				<input type="text" name="gu" class="input_search" />
+				<button type="submit" id="search" class="btn btn-danger list_submit">검색</button>
 			</div>
 
 			<div class="main_login">
